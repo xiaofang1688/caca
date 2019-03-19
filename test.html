@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取函数的返回值</title>
+	    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		// 这是回调函数
+
+function ready(obj){
+alert(obj);
+
+}
+
+
+// 这是异步函数
+
+function async(){
+
+// $.ajax({
+
+// ...
+
+// success:function(data){
+
+// ready(data);
+
+// }
+
+// });
+               $.ajax({
+               	
+                    type:"get",
+                    url:"http://192.168.3.3:3301/list",
+                    // data:{user_id:1},
+                    success:function(backDate){
+                    	var a =JSON.stringify(backDate)
+                      ready(a)
+                      		
+                    }
+                })
+
+}
+
+// 调用异步函数
+
+async()
+
+	</script>
+</body>
+</html>
